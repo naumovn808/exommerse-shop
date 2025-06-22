@@ -1,4 +1,3 @@
-import { verify } from "jsonwebtoken";
 import mongoose from "mongoose";
 
 const userSchema = new mongoose.Schema({
@@ -9,7 +8,7 @@ const userSchema = new mongoose.Schema({
     email: {
         type: String,
         required: [true, "Provide email"],
-        uniquer: true
+        unique: true
     },
     password: {
         type: String,
@@ -34,7 +33,7 @@ const userSchema = new mongoose.Schema({
     },
     last_login_date: {
         type: Date,
-        default: ''
+        default: null
     },
     status: {
         type: String,
@@ -56,6 +55,10 @@ const userSchema = new mongoose.Schema({
     }],
     forgot_password_expiry: {
         type: Date,
+        default: ''
+    },
+    forgot_password_otp: {
+        type: String,
         default: ''
     },
     role: {

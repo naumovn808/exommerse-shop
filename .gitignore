@@ -21,7 +21,7 @@ dist-ssr
 *.sw?
 
 # node_modules
-client/node_nodules
+client/node_modules
 server/node_modules
 
 # env
